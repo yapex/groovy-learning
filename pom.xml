@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.alisoft.groovy</groupId>
+  <artifactId>gcouch</artifactId>
+  <version>0.0.1</version>
+
+  <scm>
+    <connection>scm:svn:https://gcouch.googlecode.com/svn/trunk/</connection>
+    <developerConnection>scm:svn:https://gcouch.googlecode.com/svn/trunk/</developerConnection>
+  </scm>
+
+  <properties>
+    <java.code.version>1.5</java.code.version>
+  </properties>
+  
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>jar-with-dependencies</id>
+            <phase>package</phase>
+            <goals>
+              <goal>attached</goal>
+            </goals>
+            <configuration>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+              <archive>
+                <manifest>
+                  <mainClass></mainClass>
+                </manifest>
+              </archive>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.groovy.maven</groupId>
+        <artifactId>gmaven-plugin</artifactId>
+        <version>1.0-rc-5</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+              <goal>generateStubs</goal>
+              <goal>testCompile</goal>
+              <goal>generateTestStubs</goal>
+            </goals>
+            <configuration>
+              <providerSelection>1.5</providerSelection>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+
+	<dependency>
+	   <groupId>log4j</groupId>
+	   <artifactId>log4j</artifactId>
+	   <version>1.2.14</version>
+	</dependency>
+
+    <dependency>
+      <groupId>org.codehaus.groovy</groupId>
+      <artifactId>groovy-all</artifactId>
+      <version>1.6.3</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.codehaus.groovy</groupId>
+      <artifactId>http-builder</artifactId>
+      <version>0.4.1</version>
+    </dependency>
+
+    <dependency>
+	  <groupId>org.codehaus.jackson</groupId>
+	  <artifactId>jackson-core-asl</artifactId>
+	  <version>0.9.9-5</version>
+	  <scope>compile</scope>
+	</dependency>
+	
+	<dependency>
+	  <groupId>org.codehaus.jackson</groupId>
+	  <artifactId>jackson-mapper-asl</artifactId>
+	  <version>0.9.9-5</version>
+	  <scope>compile</scope>
+	</dependency>
+  </dependencies>
+  
+  
+
+</project>
