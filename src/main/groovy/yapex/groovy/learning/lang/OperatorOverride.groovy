@@ -1,4 +1,4 @@
-package yapex.groovy.learing.lang
+package yapex.groovy.learning.lang
 
 class Money {
 	private int amount
@@ -34,9 +34,3 @@ class Money {
 		return "$amount ($currency)"
 	}
 }
-
-def buck = new Money(1, 'USD')
-assert buck
-assert buck == new Money(1, 'USD')
-assert buck + buck == new Money(2, 'USD')
-println buck + buck
